@@ -4,16 +4,11 @@ terraform {
       source = "hashicorp/google"
     }
   }
-
-   backend "gcs" {
-    bucket  = "barberoterraform"
-    prefix  = "terraform/state"
-  }
   
 }
 
 provider "google" {
-  project = "barbero-devops-iac"
+  project = "droperox-devops-iac"
   region  = "us-central1"
   zone    = "us-central1-c"
 }
@@ -23,7 +18,7 @@ resource "google_compute_network" "vpc_network" {
 }
 
 resource "google_compute_instance" "vm_instance" {
-  name         = "terraform-instance"
+  name         = "cloudbbuildterraform"
   machine_type = "f1-micro"
   tags = ["prod"]
 
